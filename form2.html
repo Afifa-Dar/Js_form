@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="">
+<label>First Name: <input type="text" id="fname"></label><br>
+<label>Last Name: <input type="text" id="lname"></label><br>
+<label>Email: <input type="text" id="email"></label><br>
+<label>Address: <input type="text" id="add"></label><br>
+<label>Phone: <input type="text" id="phone"></label><br>
+<input type = "button" onclick="checkForm()" value="submit">
+</form>
+<p id="check"></p>
+<script type="text/javascript">
+  function focusField(fieldName)
+  {
+document.getElementById(fieldName).focus();
+}
+function checkForm()
+{ var fname =document.getElementById("fname").value;
+var lname = document.getElementById("lname").value;
+var email = document.getElementById("email").value;
+var address = document.getElementById("add").value;
+var phone =document.getElementById("phone").value;
+//document.write(fname);
+if(!fname.trim()){
+  al=alert("First Name field is empty");
+  console.log(al)
+  focusField("fname")
+}
+else if(!lname.trim())  //remove whitesapce in text
+{ alert("Last Name field is empty");
+ focusField("lname")
+}
+else if(!email.trim())
+{ alert("Email field is empty");
+focusField("email")
+}
+else if(!address.trim())
+{ alert("Address field is empty");
+focusField("add")
+}
+else if(!phone.trim()){
+  alert("Phone no field is empty");
+  focusField("phone");
+}
+else
+alert("THANK YOU");
+document.getElementById('check').innerHTML=lname
+
+}
+</script>
+</body>
+</html>
